@@ -143,26 +143,51 @@ public class OperacionesTest {
      * Si el argumento es negativo o 0 se espera que el método propague la
      * excepción IllegalArgumentException.
      */
-    
-    @Test (expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testIsParException() {
         System.out.println("ParException");
         int a = -2;
         boolean result = operaciones.isPar(a);
-
     }
 
     /**
-     * Test of extraerPositivos method, of class Operaciones.
+     * Test of extraerPositivos method, of class Operaciones. El método
+     * extraerPositivos recibe como parámetro un array de int y devuelve como
+     * resultado otro array de int. El resultado esperado es un nuevo array con
+     * los valores positivos del array recibido como parámetro. El nuevo array
+     * generado será el retorno del método.
      */
-    @Ignore
     @Test
     public void testExtraerPositivos() {
         System.out.println("extraerPositivos");
+        int[] nums = {1, 2, 3, 4, 5};
+        int[] result = operaciones.extraerPositivos(nums);
+
+        int[] expResult = {1, 2, 3, 4, 5};
+        assertArrayEquals(expResult, result);
+    }
+
+    /**
+     * Si el array recibido es nulo, se espera que el método propague la
+     * excepción IllegalArgumentException.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testExtraerPositivosException() {
+        System.out.println("PositivosException");
         int[] nums = null;
-        Operaciones instance = new Operaciones();
-        int[] expResult = null;
-        int[] result = instance.extraerPositivos(nums);
+        int[] result = operaciones.extraerPositivos(nums);
+    }
+
+    /**
+     * Si el array recibido está vacío, el array resultante también lo estará.
+     */
+    @Test
+    public void testExtraerPositivosVacio() {
+        System.out.println("PositivosVacio");
+        int[] nums = {};
+        int[] result = operaciones.extraerPositivos(nums);
+
+        int[] expResult = {};
         assertArrayEquals(expResult, result);
     }
 
