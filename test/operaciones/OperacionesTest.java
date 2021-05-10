@@ -66,7 +66,6 @@ public class OperacionesTest {
      * Si el primer parámetro es mayor que el segundo, debe generar igualmente
      * el rango en orden ascendente.
      */
-
     @Test
     public void testRango2() {
         System.out.println("rango2");
@@ -97,7 +96,8 @@ public class OperacionesTest {
 
         assertEquals(expResult, result);
     }
-       @Test
+
+    @Test
     public void testSumRango2() {
         System.out.println("sumRango");
         int a = 5;
@@ -110,17 +110,46 @@ public class OperacionesTest {
     }
 
     /**
-     * Test of isPar method, of class Operaciones.
+     * Test of isPar method, of class Operaciones. El método isPar recibe un
+     * parámetro de tipo int y devuelve un boolean. El resultado esperado tras
+     * la ejecución es true siempre que el valor del argumento sea par.
      */
-    @Ignore
     @Test
     public void testIsPar() {
         System.out.println("isPar");
-        int a = 0;
-        Operaciones instance = new Operaciones();
-        boolean expResult = false;
-        boolean result = instance.isPar(a);
+        int a = 2;
+        boolean result = operaciones.isPar(a);
+
+        boolean expResult = true;
+
         assertEquals(expResult, result);
+    }
+
+    /**
+     * Debe retornar false si no es par
+     */
+    @Test
+    public void testIsParFalse() {
+        System.out.println("ParFalse");
+        int a = 5;
+        boolean result = operaciones.isPar(a);
+
+        boolean expResult = false;
+
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Si el argumento es negativo o 0 se espera que el método propague la
+     * excepción IllegalArgumentException.
+     */
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testIsParException() {
+        System.out.println("ParException");
+        int a = -2;
+        boolean result = operaciones.isPar(a);
+
     }
 
     /**
