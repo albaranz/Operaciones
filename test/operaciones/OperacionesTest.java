@@ -19,7 +19,7 @@ import org.junit.Ignore;
  */
 public class OperacionesTest {
 
-    Operaciones operaciones = new Operaciones();
+    private Operaciones operaciones = new Operaciones();
 
     public OperacionesTest() {
     }
@@ -40,9 +40,7 @@ public class OperacionesTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of rango method, of class Operaciones.
-     */
+
     /**
      * Test of rango method, of class Operaciones. El método rango recibe 2
      * parámetros de tipo int y retorna un array de tipo int. El resultado
