@@ -48,6 +48,7 @@ public class OperacionesTest {
      * valores enteros comprendidos entre los dos parámetros (ambos incluidos)
      * en orden ascendente (de menor a mayor).
      */
+    @Ignore
     @Test
     public void testRango() {
         System.out.println("rango");
@@ -64,6 +65,7 @@ public class OperacionesTest {
      * Si el primer parámetro es mayor que el segundo, debe generar igualmente
      * el rango en orden ascendente.
      */
+    @Ignore
     @Test
     public void testRango2() {
         System.out.println("rango2");
@@ -83,6 +85,7 @@ public class OperacionesTest {
      * parámetros (ambos incluidos). El método debe retornar el cálculo correcto
      * con indiferencia del orden en el que reciba los dos argumentos.
      */
+    @Ignore
     @Test
     public void testSumRango() {
         System.out.println("sumRango");
@@ -94,7 +97,7 @@ public class OperacionesTest {
 
         assertEquals(expResult, result);
     }
-
+ @Ignore
     @Test
     public void testSumRango2() {
         System.out.println("sumRango");
@@ -112,6 +115,7 @@ public class OperacionesTest {
      * parámetro de tipo int y devuelve un boolean. El resultado esperado tras
      * la ejecución es true siempre que el valor del argumento sea par.
      */
+    @Ignore
     @Test
     public void testIsPar() {
         System.out.println("isPar");
@@ -126,6 +130,7 @@ public class OperacionesTest {
     /**
      * Debe retornar false si no es par
      */
+    @Ignore
     @Test
     public void testIsParFalse() {
         System.out.println("ParFalse");
@@ -141,8 +146,15 @@ public class OperacionesTest {
      * Si el argumento es negativo o 0 se espera que el método propague la
      * excepción IllegalArgumentException.
      */
+    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void testIsParException() {
+        System.out.println("ParException");
+        int a = 0;
+        boolean result = operaciones.isPar(a);
+    }
+        @Test(expected = IllegalArgumentException.class)
+    public void testIsParExceptionNeg() {
         System.out.println("ParException");
         int a = -2;
         boolean result = operaciones.isPar(a);
@@ -155,13 +167,14 @@ public class OperacionesTest {
      * los valores positivos del array recibido como parámetro. El nuevo array
      * generado será el retorno del método.
      */
+    @Ignore
     @Test
     public void testExtraerPositivos() {
         System.out.println("extraerPositivos");
-        int[] nums = {1, 2, 3, 4, 5};
+        int[] nums = {1, -2, 3, -4, 5};
         int[] result = operaciones.extraerPositivos(nums);
 
-        int[] expResult = {1, 2, 3, 4, 5};
+        int[] expResult = {1, 3, 5};
         assertArrayEquals(expResult, result);
     }
 
@@ -169,6 +182,7 @@ public class OperacionesTest {
      * Si el array recibido es nulo, se espera que el método propague la
      * excepción IllegalArgumentException.
      */
+    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void testExtraerPositivosException() {
         System.out.println("PositivosException");
@@ -179,6 +193,7 @@ public class OperacionesTest {
     /**
      * Si el array recibido está vacío, el array resultante también lo estará.
      */
+    @Ignore
     @Test
     public void testExtraerPositivosVacio() {
         System.out.println("PositivosVacio");
