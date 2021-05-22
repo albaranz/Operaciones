@@ -42,13 +42,8 @@ public class OperacionesTest {
 
 
     /**
-     * Test of rango method, of class Operaciones. El método rango recibe 2
-     * parámetros de tipo int y retorna un array de tipo int. El resultado
-     * esperado tras la ejecución de dicho método es un array con todos los
-     * valores enteros comprendidos entre los dos parámetros (ambos incluidos)
-     * en orden ascendente (de menor a mayor).
+     * Test of rango method, of class Operaciones. 
      */
-    @Ignore
     @Test
     public void testRango() {
         System.out.println("rango");
@@ -61,11 +56,6 @@ public class OperacionesTest {
         assertArrayEquals(expResult, result);
     }
 
-    /**
-     * Si el primer parámetro es mayor que el segundo, debe generar igualmente
-     * el rango en orden ascendente.
-     */
-    @Ignore
     @Test
     public void testRango2() {
         System.out.println("rango2");
@@ -79,13 +69,8 @@ public class OperacionesTest {
     }
 
     /**
-     * Test of sumRango method, of class Operaciones. El método sumRango recibe
-     * 2 parámetros de tipo int y retorna un entero. El resultado esperado como
-     * retorno es la suma de todos los valores comprendidos entre los dos
-     * parámetros (ambos incluidos). El método debe retornar el cálculo correcto
-     * con indiferencia del orden en el que reciba los dos argumentos.
+     * Test of sumRango method, of class Operaciones. 
      */
-    @Ignore
     @Test
     public void testSumRango() {
         System.out.println("sumRango");
@@ -97,7 +82,6 @@ public class OperacionesTest {
 
         assertEquals(expResult, result);
     }
- @Ignore
     @Test
     public void testSumRango2() {
         System.out.println("sumRango");
@@ -111,11 +95,8 @@ public class OperacionesTest {
     }
 
     /**
-     * Test of isPar method, of class Operaciones. El método isPar recibe un
-     * parámetro de tipo int y devuelve un boolean. El resultado esperado tras
-     * la ejecución es true siempre que el valor del argumento sea par.
+     * Test of isPar method, of class Operaciones. 
      */
-    @Ignore
     @Test
     public void testIsPar() {
         System.out.println("isPar");
@@ -127,10 +108,6 @@ public class OperacionesTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Debe retornar false si no es par
-     */
-    @Ignore
     @Test
     public void testIsParFalse() {
         System.out.println("ParFalse");
@@ -142,11 +119,6 @@ public class OperacionesTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Si el argumento es negativo o 0 se espera que el método propague la
-     * excepción IllegalArgumentException.
-     */
-    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void testIsParException() {
         System.out.println("ParException");
@@ -161,13 +133,8 @@ public class OperacionesTest {
     }
 
     /**
-     * Test of extraerPositivos method, of class Operaciones. El método
-     * extraerPositivos recibe como parámetro un array de int y devuelve como
-     * resultado otro array de int. El resultado esperado es un nuevo array con
-     * los valores positivos del array recibido como parámetro. El nuevo array
-     * generado será el retorno del método.
+     * Test of extraerPositivos method, of class Operaciones. 
      */
-    @Ignore
     @Test
     public void testExtraerPositivos() {
         System.out.println("extraerPositivos");
@@ -178,11 +145,6 @@ public class OperacionesTest {
         assertArrayEquals(expResult, result);
     }
 
-    /**
-     * Si el array recibido es nulo, se espera que el método propague la
-     * excepción IllegalArgumentException.
-     */
-    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void testExtraerPositivosException() {
         System.out.println("PositivosException");
@@ -190,10 +152,6 @@ public class OperacionesTest {
         int[] result = operaciones.extraerPositivos(nums);
     }
 
-    /**
-     * Si el array recibido está vacío, el array resultante también lo estará.
-     */
-    @Ignore
     @Test
     public void testExtraerPositivosVacio() {
         System.out.println("PositivosVacio");
